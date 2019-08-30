@@ -1,32 +1,30 @@
 import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Grid from '@material-ui/core/Grid';
+import Link from '@material-ui/core/Link';
+import { makeStyles } from '@material-ui/core/styles';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import Grid from '@material-ui/core/Grid';
 
-import { makeStyles } from '@material-ui/core/styles';
-
-import Link from '@material-ui/core/Link';
-
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   footer: {
     flexGrow: 1,
     padding: theme.spacing(4),
   },
   link: {
     paddingLeft: theme.spacing(4),
-    paddingRight: theme.spacing(4)
-  },  
+    paddingRight: theme.spacing(4),
+  },
   linkedInIcon: {
-    backgroundColor: '#fc6d6d'
+    backgroundColor: '#fc6d6d',
   },
   githubIcon: {
-    backgroundColor: '#fc6d6d'
+    backgroundColor: '#fc6d6d',
   },
   emailIcon: {
-    backgroundColor: '#fc6d6d'
-  },  
+    backgroundColor: '#fc6d6d',
+  },
 }));
 
 const Footer = () => {
@@ -44,21 +42,21 @@ const Footer = () => {
 
       <Grid item>
         <Link href="https://www.linkedin.com/in/danielcpan/" target="_blank" className={classes.link}>
-        <Avatar className={classes.linkedInIcon}>
+          <Avatar className={classes.linkedInIcon}>
             <FontAwesomeIcon icon={faLinkedinIn} />
           </Avatar>
         </Link>
       </Grid>
 
       <Grid item>
-        <Link href="mailto:daniecpan@gmail.com" target="_blank" className={classes.link}>
+        <Link href="mailto:daniecpan@gmail.com" className={classes.link}>
           <Avatar className={classes.emailIcon}>
             <FontAwesomeIcon icon={faEnvelope} />
           </Avatar>
         </Link>
       </Grid>
     </Grid>
-  )
-}
+  );
+};
 
 export default Footer;
