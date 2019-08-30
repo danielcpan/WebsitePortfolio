@@ -40,7 +40,7 @@ const styles = (theme) => ({
     color: 'white',
     height: '90vh',
     width: '90vw',
-    minHeight: '25rem',
+    minHeight: '22rem',
   },
   close: {
     backgroundColor: '#ee5c54',
