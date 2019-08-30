@@ -1,7 +1,54 @@
 import React from 'react';
+import { withStyles } from '@material-ui/core/styles';
 import format from 'date-fns/format';
 
 import { Grid, Typography, Link, Grow } from '@material-ui/core';
+
+const styles = theme => ({
+  root: {
+    marginTop: 30
+  },
+  terminalAppBarButton: {
+    margin: 4, 
+    height: 12, 
+    width: 12, 
+    borderRadius: 10,
+  },
+  terminalAppBar: {
+    borderTopLeftRadius: 8, 
+    borderTopRightRadius: 8, 
+    paddingLeft: 5,
+    backgroundColor: '#dbdbdb',
+  },
+  terminalAppBarHeader: {
+    textAlign: 'center', 
+    paddingRight: 90, 
+    fontSize: 12, 
+    paddingTop: 3, 
+    color: 'black',
+  },
+  terminalBody: {
+    borderBottomLeftRadius: 8, 
+    borderBottomRightRadius: 8, 
+    padding: 5,
+    backgroundColor: 'black',
+    color: 'white',
+    height: '90vh',
+    width: '90vw',   
+  },
+  close: {
+    backgroundColor: '#ee5c54', 
+  },
+  minimize: {
+    backgroundColor: '#f7bd44'
+  },  
+  maximize: {
+    backgroundColor: '#5eca42'
+  },
+  link: {
+    color: '#fc6d6d'
+  }
+});
 
 class Terminal extends React.Component {
   state = {
@@ -53,21 +100,23 @@ class Terminal extends React.Component {
   }
 
   render() {
+    const { classes } = this.props;
+
     return (
-      <Grow in={this.state.zoom} id="test">
-        <div style={{marginTop: 30}}>
-        <Grid container id="terminal-app-bar" style={{ borderTopLeftRadius: 8, borderTopRightRadius: 8, paddingLeft: 5 }}>
+      <Grow in={this.state.zoom}>
+        <div className={classes.root}>
+        <Grid container id="terminal-app-bar" className={classes.terminalAppBar}>
             <Grid item xs={3} sm={2} md={1}>
               <Grid container>
-                <Grid item style={{margin: 4, height: 12, width: 12, backgroundColor: '#ee5c54', borderRadius: 10 }}></Grid>
-                <Grid item style={{margin: 4, height: 12, width: 12, backgroundColor: '#f7bd44', borderRadius: 10 }}></Grid>
-                <Grid item style={{margin: 4, height: 12, width: 12, backgroundColor: '#5eca42', borderRadius: 10 }}></Grid>
+                <Grid item className={`${classes.terminalAppBarButton} ${classes.close}`} />
+                <Grid item className={`${classes.terminalAppBarButton} ${classes.minimize}`} />
+                <Grid item className={`${classes.terminalAppBarButton} ${classes.maximize}`} />
               </Grid>
             </Grid>
             <Grid item xs={9} sm={10} md={11}>
-              <div style={{textAlign: 'center', paddingRight: 90, fontSize: 12, paddingTop: 3, color: 'black' }}>Daniel-Pan ─ bash ─ 202x60</div></Grid>
+              <div className={classes.terminalAppBarHeader}>Daniel-Pan ─ bash ─ 202x60</div></Grid>
             </Grid>
-            <Grid container id="terminal-body" style={{ borderBottomLeftRadius: 8, borderBottomRightRadius: 8, padding: 5 }}>
+            <Grid container id="terminal-body" className={classes.terminalBody}>
               <Grid item>
                 <Typography>
                   {`Last login: ${this.state.date} on ttys000`}
@@ -79,13 +128,13 @@ class Terminal extends React.Component {
                 {(this.state.scriptIndex === 6) && (
                   <div>
                     <Link href="#budgetApp">
-                      <Typography style={{color: '#fc6d6d'}}>BudgetApp</Typography>
+                      <Typography className={classes.link}>BudgetApp</Typography>
                     </Link>
                     <Link href="#chatApp">
-                      <Typography style={{color: '#fc6d6d'}}>ChatApp</Typography>
+                      <Typography className={classes.link}>ChatApp</Typography>
                     </Link>
                     <Link href="#tinyUrlClone">
-                      <Typography style={{color: '#fc6d6d'}}>TinyUrlClone</Typography>
+                      <Typography className={classes.link}>TinyUrlClone</Typography>
                   </Link>
                 </div>                              
               )}
@@ -97,4 +146,4 @@ class Terminal extends React.Component {
   }
 }
 
-export default Terminal;
+export default withStyles(styles)(Terminal);

@@ -40,6 +40,9 @@ const useStyles = makeStyles(theme => ({
     paddingLeft: theme.spacing(4),
     paddingRight: theme.spacing(4)
   },
+  eyeIcon: {
+    backgroundColor: '#fc6d6d'
+  },  
   githubIcon: {
     backgroundColor: '#fc6d6d'
   },
@@ -115,7 +118,7 @@ const Projects = () => {
                   </CardContent>
                   <CardActions>
                     <Link href={card.demo} target="_blank" className={classes.cardLink}>
-                    <Avatar className={classes.emailIcon}>
+                    <Avatar className={classes.eyeIcon}>
                         <FontAwesomeIcon icon={faEye} />
                       </Avatar>
                     </Link>
