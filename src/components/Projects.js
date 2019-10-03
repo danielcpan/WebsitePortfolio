@@ -69,7 +69,7 @@ const cards = [
     gif: require('../assets/ChatApp.gif'),
     demo: 'https://chat-app-daniel-pan.herokuapp.com/login',
     github: 'https://github.com/danielcpan/ChatApp',
-    technologies: ['Node.js', 'Express.js', 'Sequelize', 'Postgres', 'Mocha', 'Chai', 'React.js', 'Redux', 'Materail Ui', 'Socket.io', 'REST'],
+    technologies: ['Node.js', 'Express.js', 'Sequelize', 'Postgres', 'Mocha', 'Chai', 'React.js', 'Redux', 'Material UI', 'Socket.io', 'REST'],
   },
   {
     id: 'tinyUrlClone',
@@ -78,8 +78,17 @@ const cards = [
     gif: require('../assets/TinyUrlClone.gif'),
     demo: 'https://tiny-url-clone.netlify.com/',
     github: 'https://github.com/danielcpan/TinyUrlCloneFrontEnd',
-    technologies: ['Node.js', 'Express.js', 'Mongoose', 'MongoDB', 'Mocha', 'Chai', 'React.js', 'Redux', 'Materail Ui', 'REST'],
+    technologies: ['Node.js', 'Express.js', 'Mongoose', 'MongoDB', 'Mocha', 'Chai', 'React.js', 'Redux', 'Material UI', 'REST'],
   },
+  {
+    id: 'bombSweeper',
+    header: 'Bomb Sweeper',
+    description: 'React Implementation of MineSweeper. Features a leaderboard',
+    gif: require('../assets/BombSweeper.gif'),
+    demo: 'https://bombsweeper.netlify.com/',
+    github: 'https://github.com/danielcpan/BombSweeperFrontEnd',
+    technologies: ['Node.js', 'Express.js', 'Mongoose', 'MongoDB', 'Mocha', 'Chai', 'React.js', 'Redux', 'Semantic UI React', 'REST'],
+  },  
 ];
 
 const Projects = () => {

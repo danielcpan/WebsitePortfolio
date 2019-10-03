@@ -145,6 +145,9 @@ class Terminal extends React.Component {
                 <Link href="#tinyUrlClone">
                   <Typography className={classes.link}>TinyUrlClone</Typography>
                 </Link>
+                <Link href="#bombSweeper">
+                  <Typography className={classes.link}>BombSweeper</Typography>
+                </Link>                
               </div>
               )}
             </Grid>
